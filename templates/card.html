@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content_block %}
+<div class="d-flex m-4 flex-row justify-content-center align-items-center" style="width: 100%;">
+    <div
+        style="background-color: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width: 300px; padding: 20px; text-align: center;
+               transition: transform 0.2s ease, box-shadow 0.2s ease;"
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.2)';"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.1)';"
+        onmousedown="this.style.transform='scale(0.95)';"
+        onmouseup="this.style.transform='scale(1.05)';"
+    >
+        <h2 style="margin-top: 0;">{{Heading}}</h2>
+        <p>{{Content}}</p>
+        {% for x in range(3) %}
+            {% if x % 2 == 0 %}
+                <p>{{x}}</p>
+            {% endif %}
+        {% endfor %}
+
+        {% for x in Names %}
+            <p>{{x}}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
